@@ -4,7 +4,7 @@
 [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/laguer/gravitational-constant/blob/mastergravitational-constant.ipynb)
 [![nbviewer](https://img.shields.io/badge/view%20on-nbviewer-brightgreen.svg)](https://nbviewer.jupyter.org/github/LaGuer/gravitational-constant/blob/master/gravitational-constant.ipynb)
 
-This repository contains the Jupyter notebooks of 3 Methods exhibiting the gravitational constant with a better approximation than the one given by CODATA2018.
+This repository contains the Jupyter notebooks of 4 Methods exhibiting the gravitational constant with a better approximation than the one given by CODATA2018.
 
 Python modules used: scipy and numpy
 
