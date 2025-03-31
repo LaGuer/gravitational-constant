@@ -1,0 +1,45 @@
+import numpy as np
+
+def compute_G_without_c(H0, R_H, M_universe):
+    """
+    Compute the gravitational constant G using the relation derived from:
+        R_H = 2GM / c^2   and   R_H = c / H0,
+    which leads to:
+        G = (H0^2 * R_H^3) / (2 * M_universe)
+    
+    Parameters:
+        H0 : float
+            Hubble constant in s^-1.
+        R_H : float
+            Hubble radius in meters.
+        M_universe : float
+            Mass of the observable universe in kilograms.
+    
+    Returns:
+        G : float
+            Gravitational constant in m^3 kg^-1 s^-2.
+    """
+    return (H0**2 * R_H**3) / (2 * M_universe)
+
+if __name__ == "__main__":
+    # Fiducial parameters:
+    # Hubble constant provided as 70 km/s/Mpc.
+    H0_km_s_Mpc = 70          # in km/s/Mpc
+    Mpc_in_m = 3.0857e22      # meters in one megaparsec
+    # Convert H0 into SI units (s^-1):
+    H0 = (H0_km_s_Mpc * 1000) / Mpc_in_m  # (m/s)/m = s^-1
+    
+    # Hubble radius:
+    # Instead of computing via c/H0, we assume the value deduced from observations.
+    R_H = 1.32e26  # in meters (approximate value as used in the repository)
+    
+    # Estimated mass of the observable universe:
+    M_universe = 8.9e52  # in kilograms
+    
+    # Compute G without directly using the speed of light
+    G = compute_G_without_c(H0, R_H, M_universe)
+    
+    print(f"Hubble constant (H0): {H0:.3e} s^-1")
+    print(f"Hubble Radius (R_H): {R_H:.3e} m")
+    print(f"Mass of the Universe (M): {M_universe:.3e} kg")
+    print(f"Calculated Gravitational Constant (G): {G:.3e} m^3 kg^-1 s^-2")
